@@ -1,10 +1,17 @@
-<script>
+<script >
+import axios from "axios";
 import Layout from "@/layouts/main.vue";
 import PageHeader from "@/components/page-header";
+import InfoCard from "@/components/widgets/card.vue";
+import PagersSearch from "@/components/Funtions/Pager-Search-Btn.vue";
+import Table from "@/components/GenericTable.vue";
 export default {
   components: {
     Layout,
     PageHeader,
+    InfoCard,
+    PagersSearch,
+    Table,
   },
   data() {
     return {
@@ -19,7 +26,21 @@ export default {
           active: true,
         },
       ],
+      listItems: [],
     };
+  },
+  methods: {
+    async getCompany() {
+      try {
+        const result = await axios.get("/api/lista-empresa");
+        this.listItems = result.data.data;
+      } catch (err) {
+        console.log(err);
+      }
+    },
+  },
+  created() {
+    this.getCompany();
   },
 };
 </script>
@@ -27,6 +48,8 @@ export default {
 <template>
   <Layout>
     <PageHeader :title="title" :items="items" />
-    <h1>Empresa</h1>
+    <InfoCard />
+    <PagersSearch />
+    <Table :items="listItems" />
   </Layout>
 </template>
