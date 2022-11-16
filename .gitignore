@@ -1,7 +1,9 @@
 /node_modules
 /dist
 /.env
-/..env.production
+/.env.production
 /app.config.json
 /package.json
 /yarn.lock
+/.gitignore
+/vue.config
