@@ -23,7 +23,7 @@ export default {
 </script>
 <template>
   <b-card class="py-4 px-2 shadow-lg bg-body rounded">
-    <BTable
+    <b-table
       :striped="striped"
       :bordered="bordered"
       :borderless="borderless"
@@ -38,7 +38,11 @@ export default {
       :fields="fields"
       :head-variant="headVariant"
       :table-variant="tableVariant"
-    />
+    >
+      <slot v-for="(_, name) in $slots" :name="name" />
+
+      <slot :name="name" v-bind="slotData" />
+    </b-table>
     <b-col sm="7" md="6" class="my-1">
       <b-pagination
         v-model="currentPage"

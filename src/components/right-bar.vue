@@ -41,7 +41,7 @@
     },
     mounted() {
       let rightbar_isopen = localStorage.getItem('rightbar_isopen')
-      if (rightbar_isopen == 'true') {
+      if (rightbar_isopen == 'false') {
         document.getElementById('mdi-cog').click()
         localStorage.setItem("rightbar_isopen", false);
       }

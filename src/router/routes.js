@@ -76,15 +76,6 @@ export default [
     },
     component: () => import("../views/dashboard/ecommerce/index.vue"),
   },
-/*   {
-    path: "/",
-    name: "login",
-    meta: {
-      title: "Dashboard",
-      authRequired: false,
-    },
-    component: () => import("../views/account/login.vue"),
-  }, */
   {
     path: "/Usuario",
     name: "Usuario",
@@ -123,12 +114,21 @@ export default [
   },
   {
     path: "/AgregarSucursales",
-    name: "AgregarSucursales",
+    name: "Agregar Sucursales",
     meta: {
       title: "Agregar Sucursales"
 
     },
-    component: () => import("@/views/Admin/Sucursales/Sucursales.vue")
+    component: () => import("@/views/Admin/Sucursales/Crud/AgregarSucursales.vue")
+  },
+  {
+    path: "/EditarSucursales/:id",
+    name: "EditarSucursales",
+    meta: {
+      title: "Editar Sucursales"
+
+    },
+    component: () => import("@/views/Admin/Sucursales/Crud/EditarSucursales.vue")
   },
   {
     path: "/Bodega",
