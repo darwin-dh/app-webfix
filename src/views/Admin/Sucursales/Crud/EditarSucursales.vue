@@ -28,6 +28,7 @@ export default {
           direccion: item.direccion,
           correo: item.correo,
           ruc: item.ruc,
+          idsucursal: 1,
           idempresa: 1,
         });
         const data = result.data.mesage;

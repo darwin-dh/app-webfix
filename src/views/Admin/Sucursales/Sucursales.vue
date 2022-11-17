@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 import router from "@/router";
 import InfoCard from "@/components/widgets/card.vue";
 import Pagerseacchbtn from "@/components/Funtions/Pager-Search-Btn.vue";
-import Table from "@/components/Generic/pruebaTable";
+import Table from "@/components/Generic/Table";
 import axios from "axios";
 export default {
   components: {
