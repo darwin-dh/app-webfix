@@ -145,7 +145,15 @@ export default [
     meta: {
       title: "Agregar Bodega"
     },
-    component: () => import("@/views/Inventory/Bodega/Crud/Created.vue")
+    component: () => import("@/views/Inventory/Bodega/Crud/CreatedBodega.vue")
+  },
+  {
+    path: "/EditarBodega/:id",
+    name: "EditarBodega",
+    meta: {
+      title: "Editar Bodega"
+    },
+    component: () => import("@/views/Inventory/Bodega/Crud/EditBodega.vue")
   },
   {
     path: "/Productos",

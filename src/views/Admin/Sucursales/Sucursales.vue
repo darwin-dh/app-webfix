@@ -78,7 +78,7 @@ export default {
       console.log("ey", items.idsucursal);
     },
     edit(items) {
-      console.log("ey", items.idsucursal);
+
       router.push({
         name: "EditarSucursales",
         params: { id: items.idsucursal },

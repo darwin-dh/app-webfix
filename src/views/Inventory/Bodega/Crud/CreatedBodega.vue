@@ -11,24 +11,26 @@ export default {
   },
   data() {
     return {
+      codigo: "",
       nombre: "",
-      telefono: "",
+      ubicacion: "",
       direccion: "",
-      correo: "",
+      telefono: "",
+      estado: "",
       ruc: "",
-      item: [],
     };
   },
   methods: {
-    async save(item) {
+    async save() {
       try {
-        const result = await axios.post("api/editar-sucursal", {
-          nombre: item.nombre,
-          telefono: item.telefono,
-          direccion: item.direccion,
-          correo: item.correo,
-          ruc: item.ruc,
-          idsucursal: this.$route.params.id,
+        const result = await axios.post("api/agregar-bodega", {
+          codigo: this.codigo,
+          nombre: this.nombre,
+          ubicacion: this.ubicacion,
+          direccion: this.direccion,
+          telefono: this.telefono,
+          estado: this.estado,
+          ruc: this.ruc,
           idempresa: 1,
         });
         const data = result.data.mesage;
@@ -40,7 +42,7 @@ export default {
             timer: 1500,
           });
         setTimeout(() => {
-          routes.push({ name: "Sucursales" });
+          routes.push({ name: "Bodega" });
         }, "1600");
       } catch (error) {
         Swal.fire({
@@ -51,16 +53,6 @@ export default {
         });
       }
     },
-    async get() {
-      const id = this.$route.params.id;
-      const result = await axios.post("api/buscar-sucursal", {
-        idsucursal: id,
-      });
-      this.item = result.data.data;
-    },
-  },
-  created() {
-    this.get();
   },
 };
 </script>
@@ -72,47 +64,63 @@ export default {
         <input
           type="text"
           class="form-control rounded-pill"
-          v-model="item.nombre"
-          placeholder="Nombre"
+          v-model="codigo"
+          placeholder="codigo"
         />
       </div>
       <div>
         <input
           type="text"
           class="form-control rounded-pill"
-          v-model="item.telefono"
-          placeholder="Telefono"
+          v-model="nombre"
+          placeholder="nombre"
         />
       </div>
       <div>
         <input
           type="text"
           class="form-control rounded-pill"
-          v-model="item.direccion"
-          placeholder="Direccion"
+          v-model="ubicacion"
+          placeholder="ubicacion"
         />
       </div>
       <div>
         <input
           type="text"
           class="form-control rounded-pill"
-          v-model="item.correo"
-          placeholder="Correo"
+          v-model="direccion"
+          placeholder="direccion"
         />
       </div>
       <div>
         <input
           type="text"
           class="form-control rounded-pill"
-          v-model="item.ruc"
-          placeholder="Ruc"
+          v-model="telefono"
+          placeholder="telefono"
+        />
+      </div>
+      <div>
+        <input
+          type="text"
+          class="form-control rounded-pill"
+          v-model="estado"
+          placeholder="estado"
+        />
+      </div>
+      <div>
+        <input
+          type="text"
+          class="form-control rounded-pill"
+          v-model="ruc"
+          placeholder="ruc"
         />
       </div>
     </b-card>
 
     <!-- Buttons Grid -->
     <div class="d-grid">
-      <b-button variant="primary" @click="save(item)">Guardar</b-button>
+      <b-button variant="primary" @click="save">Guardar</b-button>
     </div>
   </Layout>
 </template>
