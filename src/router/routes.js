@@ -165,13 +165,22 @@ export default [
     component: () => import("@/views/Inventory/Products/Productos")
   },
   {
-    path: "/NuevoProducto",
-    name: "NuevoProducto",
+    path: "/AgregarProducto",
+    name: "Agregar Producto",
     meta: {
       title: "Agregar Producto"
 
     },
-    component: () => import("@/views/Inventory/Products/Crud/New.vue")
+    component: () => import("@/views/Inventory/Products/Crud/CreatedProduct.vue")
+  },
+
+  {
+    path: "/EditarProducto/:id",
+    name: "Editar Producto",
+    meta: {
+      title: "Editar Producto"
+    },
+    component: () => import("@/views/Inventory/Products/Crud/EditProduct.vue")
   },
   //contablidad
   {
