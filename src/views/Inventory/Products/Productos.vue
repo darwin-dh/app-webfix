@@ -112,6 +112,10 @@ export default {
         });
       }
     },
+    async exportar() {
+      const result = await axios.get("api/exportar-productos");
+      console.log(result);
+    },
   },
   created() {
     this.getProductos();
@@ -124,6 +128,9 @@ export default {
     <PageHeader :title="title" :items="items" />
     <InfoCard />
     <Pagerseacchbtn :title="title" :link="link" />
+    <b-button class="mb-5" variant="outline-warning " @click="exportar"
+      >Exportar</b-button
+    >
     <Table :fields="fields">
       <tr v-for="(data, index) in ListItems" :key="index">
         <th scope="row">
