@@ -481,24 +481,24 @@ export default {
     <div class="row">
       <div class="col-lg-12">
         <div class="card" id="tasksList">
-          <div class="card-header border-0">
+<!--           <div class="card-header border-0 bg-danger">
             <div class="d-flex align-items-center">
-              <h5 class="card-title mb-0 flex-grow-1">Lista Usuarios</h5>
+              <h5 class="card-title mb-0 flex-grow-1 ">Lista Usuarios</h5>
               <div class="flex-shrink-0">
                 <button class="btn btn-soft-danger me-1" @click="deleteMultiple">
                   <i class="ri-delete-bin-2-line"></i>
                 </button>
                 <button
-                  class="btn btn-primary add-btn"
+                  class="btn btn-primary add-btn rounded-pill "
                   data-bs-toggle="modal"
                   href="#showmodal"
                   @click="addnew"
                 >
-                  <i class="ri-add-line align-bottom me-1"></i> Nuevo Usuario
+                  <i class="ri-add-line align-bottom me-1 "></i> Nuevo Usuario
                 </button>
               </div>
             </div>
-          </div>
+          </div> -->
           <!--end card-body-->
           <div class="card-body">
             <div class="table-responsive table-card mb-4">

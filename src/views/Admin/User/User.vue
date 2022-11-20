@@ -2,13 +2,13 @@
 import Layout from "@/layouts/main.vue";
 import PageHeader from "@/components/page-header";
 import Table from "./Components/table.vue";
-import Card from "@/components/widgets/card.vue";
+//import Card from "@/components/widgets/card.vue";
 export default {
   components: {
     Layout,
     PageHeader,
     Table,
-    Card,
+    //Card,
   },
   data() {
     return {
@@ -30,9 +30,8 @@ export default {
 <template>
   <Layout>
     <PageHeader :title="title" :items="items" />
-    <Card />
-    <b-card>
-      <b-row class="d-flex align-items-center justify-content-between">
+    <b-card class="bg-white rounded-3">
+      <b-row class="d-flex align-items-center justify-content-between ">
         <b-col sm="4" md="6">
           <input
             type="password"
@@ -41,8 +40,8 @@ export default {
             placeholder="Buscar"
           />
         </b-col>
-        <b-col>
-          <b-button variant="primary" class="float-end">
+        <b-col class="">
+          <b-button variant="primary" class="float-end rounded-pill">
             <i class="las la-plus-square"></i> Nuevo Usuario
           </b-button>
         </b-col>

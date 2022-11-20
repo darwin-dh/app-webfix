@@ -90,7 +90,7 @@ export default {
   
   <template>
   <div id="layout-wrapper">
-    <NavBar class="card shadow-lg  bg-body rounded mx-4 mt-3" />
+    <NavBar class="card shadow-sm mt-2" />
 
     <div>
       <!-- ========== Left Sidebar Start ========== -->
@@ -158,7 +158,7 @@ export default {
     <div class="main-content">
       <div class="page-content bg-white">
         <!-- Start Content-->
-        <div class="container-fluid py-3 borde bg-light">
+        <div class="container-fluid py-3 rounded-3 border bg-light">
           <slot />
         </div>
       </div>
@@ -167,8 +167,3 @@ export default {
     <RightBar />
   </div>
 </template>
-<style scoped>
-.borde{
-  border-radius: 20px;
-}
-</style>

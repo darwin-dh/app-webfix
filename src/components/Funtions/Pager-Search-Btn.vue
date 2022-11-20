@@ -17,7 +17,7 @@ export default {
   <div class="py-4">
     <b-row>
       <b-col sm="7" cols="12">
-        <button class="btn btn-primary add-btn fw-bolder">
+        <button class="btn btn-primary add-btn fw-bolder rounded-pill">
           <router-link :to="link" class="nav-link custom-abc">
             <i class="ri-add-line align-bottom me-1 fw-bold"></i> Agregar
             {{ title }}</router-link
@@ -25,8 +25,14 @@ export default {
         </button>
       </b-col>
       <b-col sm="5" cols="12" class="float-sm-end">
-        <b-form-input placeholder="Buscar" class="float-sm-end w-75" >
-        </b-form-input>
+        <div class="form-icon right">
+          <input
+            type="email"
+            class="form-control form-control-icon"  
+            placeholder="BUSCAR..."
+          />
+          <i class="ri-search-2-line fs-5"></i>
+        </div>
       </b-col>
     </b-row>
   </div>

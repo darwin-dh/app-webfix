@@ -4,8 +4,9 @@ import PageHeader from "@/components/page-header";
 import Swal from "sweetalert2";
 import router from "@/router";
 import InfoCard from "@/components/widgets/card.vue";
-import Pagerseacchbtn from "@/components/Funtions/Pager-Search-Btn.vue";
-import Table from "@/components/Generic/Table";
+import Pagerbtn from "@/components/Funtions/Pager-Search-Btn.vue";
+import Table from "@/components/Generic/tablereport";
+import DataTable from "./Crud/DataTable.vue";
 import axios from "axios";
 export default {
   components: {
@@ -13,7 +14,8 @@ export default {
     PageHeader,
     Table,
     InfoCard,
-    Pagerseacchbtn,
+    Pagerbtn,
+    DataTable,
   },
   data() {
     return {
@@ -78,7 +80,6 @@ export default {
       console.log("ey", items.idsucursal);
     },
     edit(items) {
-
       router.push({
         name: "EditarSucursales",
         params: { id: items.idsucursal },
@@ -119,59 +120,9 @@ export default {
   <Layout>
     <PageHeader :title="title" :items="items" />
     <InfoCard />
-    <Pagerseacchbtn :title="title" :link="link" />
-    <Table :fields="fields">
-      <tr v-for="(data, index) in listItems" :key="index">
-        <th scope="row">
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              name="chk_child"
-              value="option1"
-            />
-          </div>
-        </th>
-
-        <td class="id">
-          {{ data.idsucursal }}
-        </td>
-        <td class="project_name">
-          {{ data.nombre }}
-        </td>
-
-        <td class="client_name">{{ data.telefono }}</td>
-        <td class="due_date">{{ data.direccion }}</td>
-        <td class="due_date">{{ data.correo }}</td>
-        <td class="due_date">{{ data.ruc }}</td>
-
-        <td>
-          <li class="align-bottom me-2 list-inline-item">
-            <b-button
-              variant="outline-primary "
-              class="btn-icon waves-effect waves-light"
-              @click="see(data)"
-              ><i class="ri-eye-line"></i
-            ></b-button>
-          </li>
-          <li class="list-inline-item">
-            <b-button
-              variant="outline-warning"
-              class="btn-icon waves-effect waves-light"
-              @click="edit(data)"
-              ><i class="ri-pencil-fill"></i
-            ></b-button>
-          </li>
-          <li class="list-inline-item">
-            <b-button
-              variant="outline-danger"
-              class="btn-icon waves-effect waves-light"
-              @click="delet(data)"
-              ><i class="ri-delete-bin-line"></i
-            ></b-button>
-          </li>
-        </td>
-      </tr>
+    <Pagerbtn :title="title" :link="link" />
+    <Table :fields="fields" :items="listItems">
+      <DataTable :items="listItems" />
     </Table>
   </Layout>
 </template>
