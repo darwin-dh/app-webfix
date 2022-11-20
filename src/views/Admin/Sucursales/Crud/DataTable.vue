@@ -1,8 +1,45 @@
 <script >
+import Swal from "sweetalert2";
+import axios from "axios";
+import router from "@/router";
 export default {
   props: {
     items: {
       type: Object,
+    },
+  },
+  methods: {
+    see(items) {
+      console.log("ey", items.idsucursal);
+    },
+    edit(items) {
+      router.push({
+        name: "EditarSucursales",
+        params: { id: items.idsucursal },
+      });
+    },
+    async delet(items) {
+      try {
+        const result = await axios.post("api/borrar-sucursal", {
+          idsucursal: items.idsucursal,
+        });
+        const data = result.data.data;
+        if (data === "YES")
+          Swal.fire({
+            icon: "success",
+            title: "Se borro con exito",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        this.$emit("getSucursal");
+      } catch (error) {
+        Swal.fire({
+          icon: "error",
+          title: error.response.data.error,
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      }
     },
   },
 };

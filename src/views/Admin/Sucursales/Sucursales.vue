@@ -1,13 +1,12 @@
 <script>
 import Layout from "@/layouts/main.vue";
 import PageHeader from "@/components/page-header";
-import Swal from "sweetalert2";
-import router from "@/router";
+import axios from "axios";
 import InfoCard from "@/components/widgets/card.vue";
 import Pagerbtn from "@/components/Funtions/Pager-Search-Btn.vue";
 import Table from "@/components/Generic/tablereport";
 import DataTable from "./Crud/DataTable.vue";
-import axios from "axios";
+
 export default {
   components: {
     Layout,
@@ -71,42 +70,8 @@ export default {
       try {
         const result = await axios.get("/api/lista-sucursal");
         this.listItems = result.data.data;
-        console.log("object,this", result.data.data);
       } catch (err) {
         console.log(err);
-      }
-    },
-    see(items) {
-      console.log("ey", items.idsucursal);
-    },
-    edit(items) {
-      router.push({
-        name: "EditarSucursales",
-        params: { id: items.idsucursal },
-      });
-    },
-    async delet(items) {
-      console.log(items.idsucursal);
-      try {
-        const result = await axios.post("api/borrar-sucursal", {
-          idsucursal: items.idsucursal,
-        });
-        const data = result.data.data;
-        if (data === "YES")
-          Swal.fire({
-            icon: "success",
-            title: "Se borro con exito",
-            showConfirmButton: false,
-            timer: 1500,
-          });
-        this.getSucursal();
-      } catch (error) {
-        Swal.fire({
-          icon: "error",
-          title: error.response.data.error,
-          showConfirmButton: false,
-          timer: 1500,
-        });
       }
     },
   },
@@ -122,7 +87,7 @@ export default {
     <InfoCard />
     <Pagerbtn :title="title" :link="link" />
     <Table :fields="fields" :items="listItems">
-      <DataTable :items="listItems" />
+      <DataTable :items="listItems" @getSucursal="getSucursal" />
     </Table>
   </Layout>
 </template>
