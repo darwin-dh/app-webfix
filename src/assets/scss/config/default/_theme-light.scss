@@ -3,7 +3,7 @@
 :root{
 
   //vertical light
---#{$prefix}vertical-menu-bg:                      #f6f8fa;
+--#{$prefix}vertical-menu-bg:                      #{$white};
 --#{$prefix}vertical-menu-item-color:              #{darken($gray-600, 10%)};
 --#{$prefix}vertical-menu-item-hover-color:        #{$primary};
 --#{$prefix}vertical-menu-item-active-color:       #{$primary};
@@ -13,31 +13,31 @@
 --#{$prefix}vertical-menu-title-color:             #919da9;
 
 //vertical dark
---#{$prefix}vertical-menu-bg-dark:                 #0A2B3D;
---#{$prefix}vertical-menu-item-color-dark:         #9aaab3;
+--#{$prefix}vertical-menu-bg-dark:                 #{$primary};
+--#{$prefix}vertical-menu-item-color-dark:         #abb9e8;
 --#{$prefix}vertical-menu-item-hover-color-dark:   #{$white};
 --#{$prefix}vertical-menu-item-active-color-dark:  #{$white};
---#{$prefix}vertical-menu-sub-item-color-dark:     #9aaab3;
+--#{$prefix}vertical-menu-sub-item-color-dark:     #abb9e8;
 --#{$prefix}vertical-menu-sub-item-hover-color-dark: #{$white};
 --#{$prefix}vertical-menu-sub-item-active-color-dark: #{$white};
---#{$prefix}vertical-menu-title-color-dark:         #aeafaf;
+--#{$prefix}vertical-menu-title-color-dark:         #838fb9;
 
 // Topbar - (Default Light)
 --#{$prefix}header-bg:  #{$white};
 --#{$prefix}header-item-color:  #e9ecef;
 // Topbar - Dark
---#{$prefix}header-bg-dark:  #133b50;
---#{$prefix}header-item-color-dark:  #9aaab3;
+--#{$prefix}header-bg-dark:  #{$primary};
+--#{$prefix}header-item-color-dark:  #b0c4d9;
 
 // Topbar Search
 --#{$prefix}topbar-search-bg: #f3f3f9;
 // Topbar User
 --#{$prefix}topbar-user-bg: #f3f3f9;
---#{$prefix}topbar-user-bg-dark: #214c62;
+--#{$prefix}topbar-user-bg-dark: #52639c;
 
 //footer
---#{$prefix}footer-bg:     #f6f8fa;
---#{$prefix}footer-color:  #98a6ad;
+--#{$prefix}footer-bg: #{$white};
+--#{$prefix}footer-color: #98a6ad;
 
 // Horizontal nav
 --#{$prefix}topnav-bg: #{$white};
@@ -49,7 +49,7 @@
 --#{$prefix}twocolumn-menu-bg:  #{$white};
 // two column dark
 --#{$prefix}twocolumn-menu-iconview-bg-dark: var(--#{$prefix}vertical-menu-bg-dark);
---#{$prefix}twocolumn-menu-bg-dark:  #0b2e41;
+--#{$prefix}twocolumn-menu-bg-dark:  #{lighten($primary, 2%)};
 --#{$prefix}twocolumn-menu-item-color-dark: var(--#{$prefix}vertical-menu-item-color-dark);
 --#{$prefix}twocolumn-menu-item-active-color-dark:  #{$white};
 --#{$prefix}twocolumn-menu-item-active-bg-dark:  #{rgba($white, .15)};
@@ -87,7 +87,7 @@
 }
 
 //list
---#{$prefix}list-group-hover-bg:                  #{$gray-100};
+--#{$prefix}list-group-hover-bg: #{$gray-100};
 
 // form
 --#{$prefix}input-bg: #{$white};
