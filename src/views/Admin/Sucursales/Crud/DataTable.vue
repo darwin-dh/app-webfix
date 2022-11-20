@@ -80,7 +80,7 @@ export default {
         </button>
 
         <button
-          class="btn d-flex align-items-center text-danger px-2"
+          class="btn d-flex align-items-center text-danger-900 px-2"
           @click="delet(data)"
         >
           <i class="ri-delete-bin-line"></i>Borrar

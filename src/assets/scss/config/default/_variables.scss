@@ -180,33 +180,37 @@
 	// fusv-enable
 
 	// scss-docs-start color-variables
-	$blue:       #3577f1;
-	$indigo:     #405189;
-	$purple:     #6559cc;
-	$pink:       #f672a7;
-	$red:        #f06548;
-	$orange:     #f1963b;
-	$yellow:     #f7b84b;
-	$green:      #0ab39c;
-	$teal:       #02a8b5;
-	$cyan:       #299cdb;
+	$blue:       	#3577f1;
+	$indigo:     	#405189;
+	$purple:     	#6559cc;
+	$pink:       	#f672a7;
+	$red:        	#f06548;
+	$orange:     	#f1963b;
+	$yellow:     	#f7b84b;
+	$green:      	#0ab39c;
+	$teal:       	#02a8b5;
+	$cyan:       	#299cdb;
+	$primary-900:   #00195f;
+	$danger-900:    #b91e1e;
 	// scss-docs-end color-variables
 
 	// scss-docs-start colors-map
 	$colors: (
-	  "blue":       $blue,
-	  "indigo":     $indigo,
-	  "purple":     $purple,
-	  "pink":       $pink,
-	  "red":        $red,
-	  "orange":     $orange,
-	  "yellow":     $yellow,
-	  "green":      $green,
-	  "teal":       $teal,
-	  "cyan":       $cyan,
-	  "white":      $white,
-	  "gray":       $gray-600,
-	  "gray-dark":  $gray-800
+	  "blue":       	$blue,
+	  "indigo":     	$indigo,
+	  "purple":     	$purple,
+	  "pink":       	$pink,
+	  "red":        	$red,
+	  "orange":     	$orange,
+	  "yellow":     	$yellow,
+	  "green":      	$green,
+	  "teal":       	$teal,
+	  "cyan":       	$cyan,
+	  "white":      	$white,
+	  "gray":       	$gray-600,
+	  "gray-dark":  	$gray-800,
+	  "primary-900":	$primary-900,	
+	  "danger-900": 	$danger-900,	
 	);
 	// scss-docs-end colors-map
 
@@ -219,18 +223,25 @@
 	$danger:        $red;
 	$light:         $gray-100;
 	$dark:          $gray-900;
+	//custom
+	$purple:		$purple;
+	$primary-900:   $primary-900;
+	$danger-900:    $danger-900;
 	// scss-docs-end theme-color-variables
 
 	// scss-docs-start theme-colors-map
 	$theme-colors: (
-	  "primary":    $primary,
-	  "secondary":  $secondary,
-	  "success":    $success,
-	  "info":       $info,
-	  "warning":    $warning,
-	  "danger":     $danger,
-	  "light":      $light,
-	  "dark":       $dark
+	  "primary":    	$primary,
+	  "secondary":  	$secondary,
+	  "success":    	$success,
+	  "info":       	$info,
+	  "warning":    	$warning,
+	  "danger":     	$danger,
+	  "light":      	$light,
+	  "dark":       	$dark,
+	  "purple":     	$purple,
+	  "primary-900":    $primary-900,
+	  "danger-900":     $danger-900,
 	);
 	// scss-docs-end theme-colors-map
 
