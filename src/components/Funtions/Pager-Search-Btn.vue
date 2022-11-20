@@ -6,7 +6,7 @@ export default {
     },
     link: {
       type: String,
-      default: '/'
+      default: "/",
     },
   },
 };
@@ -14,18 +14,20 @@ export default {
 
 
 <template>
-  <b-card class="shadow-lg bg-body rounded">
+  <div class="py-4">
     <b-row>
-      <b-col sm="5" cols="12">
-        <b-form-input placeholder="Buscar"> </b-form-input>
-      </b-col>
-      <b-col>
-        <button class="btn btn-primary add-btn float-sm-end">
+      <b-col sm="7" cols="12">
+        <button class="btn btn-primary add-btn fw-bolder">
           <router-link :to="link" class="nav-link custom-abc">
-            Nuevo {{ title }}</router-link
+            <i class="ri-add-line align-bottom me-1 fw-bold"></i> Agregar
+            {{ title }}</router-link
           >
         </button>
       </b-col>
+      <b-col sm="5" cols="12" class="float-sm-end">
+        <b-form-input placeholder="Buscar" class="float-sm-end w-75" >
+        </b-form-input>
+      </b-col>
     </b-row>
-  </b-card>
+  </div>
 </template>

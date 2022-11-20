@@ -21,7 +21,7 @@ export default {
 
     <div class="row">
       <div class="col-12">
-        <b-card class="bg-light border-0 ">
+        <div class="bg-light py-3">
           <div
             class="d-sm-flex align-items-center justify-content-between "
           >
@@ -40,7 +40,7 @@ export default {
               </ol>
             </div>
           </div>
-        </b-card>
+        </div>
       </div>
     </div>
   <!-- end page title -->
