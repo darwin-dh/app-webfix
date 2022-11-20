@@ -156,9 +156,9 @@ export default {
     <!-- ============================================================== -->
 
     <div class="main-content">
-      <div class="page-content">
+      <div class="page-content bg-white">
         <!-- Start Content-->
-        <div class="container-fluid">
+        <div class="container-fluid py-3 borde bg-light">
           <slot />
         </div>
       </div>
@@ -167,3 +167,8 @@ export default {
     <RightBar />
   </div>
 </template>
+<style scoped>
+.borde{
+  border-radius: 20px;
+}
+</style>
