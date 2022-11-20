@@ -14,7 +14,7 @@ import Maska from 'maska';
 import VueFeather from 'vue-feather';
 import Particles from "particles.vue3";
 
-import '@/assets/scss/config/minimal/app.scss';
+import '@/assets/scss/config/default/app.scss';
 import '@vueform/slider/themes/default.css';
 
 
