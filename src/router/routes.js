@@ -182,6 +182,36 @@ export default [
     },
     component: () => import("@/views/Inventory/Products/Crud/EditProduct.vue")
   },
+  //*****************forma pago*************//
+  {
+    path: "/FormaPagos",
+    name: "FormaPago",
+    meta: {
+      title: "FormaPago"
+
+    },
+    component: () => import("@/views/Admin/Pays/Pays.vue")
+  },
+  {
+    path: "/AgregarFormaPagos",
+    name: "AgregarFormaPagos",
+    meta: {
+      title: "Agregar Forma Pago"
+
+    },
+    component: () => import("@/views/Admin/Pays/Crud/CreatedPays.vue")
+  },
+
+  {
+    path: "/EditarFormaPagos/:id",
+    name: "EditarFormaPagos",
+    meta: {
+      title: "Editar Forma Pago"
+    },
+    component: () => import("@/views/Admin/Pays/Crud/EditPays.vue")
+  },
+
+
   //contablidad
   {
     path: "/PlandeCuentas",
