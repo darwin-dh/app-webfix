@@ -73,27 +73,32 @@ export default {
     </td>
 
     <td>
-      <div class="d-flex align-items-center">
+      <div class="d-flex align-items-center acciones">
         <button
-          class="btn d-flex align-items-center text-info px-2"
+          class="btn btn-outline-info d-flex align-items-center text-info px-2"
           @click="see(data)"
         >
-          <i class="ri-eye-line"></i>
+          <i class="mdi mdi-eye mr-2"></i>
           Ver
         </button>
 
         <button
-          class="btn d-flex align-items-center text-muted px-2"
+          class="btn btn-outline-warning d-flex align-items-center text-warning px-2"
           @click="edit(data)"
         >
-          <i class="ri-edit-box-line"></i> Editar
+          <i class="mdi mdi-pencil-box-outline"></i> Editar
         </button>
-
         <button
-          class="btn d-flex align-items-center text-danger-900 px-2"
+          class="
+            btn btn-outline-danger
+            d-flex
+            align-items-center
+            text-danger-900
+            px-2
+          "
           @click="delet(data)"
         >
-          <i class="ri-delete-bin-line"></i>Borrar
+          <i class="mdi mdi-trash-can-outline"></i>Borrar
         </button>
       </div>
     </td>
