@@ -55,53 +55,64 @@ export default {
 <template>
   <Layout>
     <PageHeader />
-    <b-card class="col-md-12 col-sm-12">
-      <div class="">
-        <input
-          type="text"
-          class="form-control rounded-pill"
-          v-model="nombre"
-          placeholder="Nombre"
-        />
-      </div>
-      <div>
-        <input
-          type="text"
-          class="form-control rounded-pill"
-          v-model="telefono"
-          placeholder="Telefono"
-        />
-      </div>
-      <div>
-        <input
-          type="text"
-          class="form-control rounded-pill"
-          v-model="direccion"
-          placeholder="Direccion"
-        />
-      </div>
-      <div>
-        <input
-          type="text"
-          class="form-control rounded-pill"
-          v-model="correo"
-          placeholder="Correo"
-        />
-      </div>
-      <div>
-        <input
-          type="text"
-          class="form-control rounded-pill"
-          v-model="ruc"
-          placeholder="Ruc"
-        />
-      </div>
-    </b-card>
+    <b-row>
+      <b-card class="">
+        <div class="">
+          <input
+            type="text"
+            class="form-control rounded-pill"
+            v-model="nombre"
+            placeholder="Nombre"
+          />
+        </div>
+        <div>
+          <input
+            type="text"
+            class="form-control rounded-pill"
+            v-model="telefono"
+            placeholder="Telefono"
+          />
+        </div>
+        <div>
+          <input
+            type="text"
+            class="form-control rounded-pill"
+            v-model="direccion"
+            placeholder="Direccion"
+          />
+        </div>
+        <div>
+          <input
+            type="text"
+            class="form-control rounded-pill"
+            v-model="correo"
+            placeholder="Correo"
+          />
+        </div>
+        <div>
+          <input
+            type="text"
+            class="form-control rounded-pill"
+            v-model="ruc"
+            placeholder="Ruc"
+          />
+        </div>
+      </b-card>
 
-    <!-- Buttons Grid -->
-    <div class="d-grid">
-      <b-button variant="primary" @click="save">Guardar</b-button>
-    </div>
+      <!-- Buttons Grid -->
+      <b-row>
+        <b-col cols="12" sm="6">
+          <b-button variant="primary" @click="save" class="w-100"
+            >Guardar</b-button
+          >
+        </b-col>
+        <b-col cols="12" sm="6">
+          <b-button variant="success" @click="save" class="w-100"
+            >Atras</b-button
+          >
+        </b-col>
+      </b-row>
+    </b-row>
   </Layout>
 </template>
 <style scoped>

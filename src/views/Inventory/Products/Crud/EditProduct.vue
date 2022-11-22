@@ -92,10 +92,10 @@ export default {
 </script>
 <template>
   <Layout>
-    <PageHeader :title="title" :link="link" :items="items" />
     <b-row class="d-flex flex-column text-center align-items-center">
-      <b-col cols="12" sm="6">
-        <b-card class="col-md-12 col-sm-6">
+      <b-col cols="12" sm="10">
+        <PageHeader :title="title" :link="link" :items="items" />
+        <b-card>
           <div class="">
             <input
               type="text"
@@ -193,15 +193,19 @@ export default {
               placeholder="Numero unidad"
             />
           </div>
+          <b-row>
+            <b-col cols="12" sm="6">
+              <b-button variant="primary" class="mb-1 w-100" @click="save(item)"
+                >Guardar</b-button
+              >
+            </b-col>
+            <b-col cols="12" sm="6">
+              <b-button variant="success " class="mb-1 w-100" to="/Productos"
+                >Atras</b-button
+              >
+            </b-col>
+          </b-row>
         </b-card>
-
-        <!-- Buttons Grid -->
-        <div class="d-grid">
-          <b-button variant="primary" class="mb-1" @click="save(item)"
-            >Guardar</b-button
-          >
-          <b-button variant="success " to="/Productos">Atras</b-button>
-        </div>
       </b-col>
     </b-row>
   </Layout>
