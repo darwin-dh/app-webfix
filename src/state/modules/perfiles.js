@@ -28,7 +28,7 @@ export const actions = {
                 commit('setUser', userAuth)
                 commit('setperfles', userAuth.data.perfiles);
                 localStorage.setItem('perfiles', JSON.stringify(perfilesuser))
-                router.push('/Dashboard')
+                router.push('/Empresa')
             }
         } catch (error) {
             Swal.fire({
