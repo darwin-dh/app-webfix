@@ -30,30 +30,7 @@
     }
 }
 
-.auth-one-bg{
-    background-image: url("~@/assets/images/auth-one-bg.jpg");
-    background-position: center;
-    background-size: cover;
 
-    .bg-overlay{
-        background: linear-gradient(to right, darken($primary, 6%), $primary);
-        opacity: 0.9;
-    }
-
-    .shape{
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        z-index: 1;
-        pointer-events: none;
-        >svg {
-            width: 100%;
-            height: auto;
-            fill: var(--#{$prefix}body-bg);
-        }
-    }
-}
 
 // auth-pass-inputgroup
 
@@ -95,21 +72,6 @@
 
 // Auth cover
 
-.auth-bg-cover{
-    background: $auth-bg-cover;
-
-    > .bg-overlay{
-        background-image: url("~@/assets/images/cover-pattern.png");
-        background-position: center;
-        background-size: cover;
-        opacity: 1;
-        background-color: transparent;
-    }
-
-    .footer{
-        color: rgba($white, .5);
-    }
-}
 
 //passowrd validations 
 #password-contain {
