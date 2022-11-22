@@ -151,7 +151,7 @@ export default {
                       </button>
                     </div>
 
-                    <div class="mt-4 text-center">
+             <!--        <div class="mt-4 text-center">
                       <div class="signin-other-title">
                         <h5 class="fs-13 mb-4 title">Iniciar con</h5>
                       </div>
@@ -196,7 +196,7 @@ export default {
                           <i class="ri-twitter-fill fs-16"></i>
                         </button>
                       </div>
-                    </div>
+                    </div> -->
                   </form>
                 </div>
               </div>
