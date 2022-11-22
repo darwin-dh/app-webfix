@@ -2,7 +2,13 @@
 
 File: Custom Css File
 */
-
+.acciones >button{
+    margin-right: 0.5rem;
+}
+.acciones >button:hover{
+background: rgba(245, 245, 245, 0.445)!important;
+color: #000!important;
+}
 .flatpickr-calendar {
     background-color: var(--#{$prefix}choices-bg) !important;
     box-shadow: 1px 0 0 $border-color, -1px 0 0 $border-color, 0 1px 0 $border-color, 0 -1px 0 $border-color, 0 3px 13px rgba(0, 0, 0, 0.08) !important;
