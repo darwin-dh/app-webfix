@@ -2,16 +2,17 @@
 import axios from "axios";
 import Layout from "@/layouts/main.vue";
 import PageHeader from "@/components/page-header";
-import InfoCard from "@/components/widgets/card.vue";
 import PagersSearch from "@/components/Funtions/Pager-Search-Btn.vue";
-import Table from "@/components/GenericTable.vue";
+import Table from "@/components/Generic/tablereport";
+import DataTable from "./Crud/DataTable.vue";
+
 export default {
   components: {
     Layout,
     PageHeader,
-    InfoCard,
     PagersSearch,
     Table,
+    DataTable,
   },
   data() {
     return {
@@ -24,6 +25,38 @@ export default {
         {
           text: "Empresa",
           active: true,
+        },
+      ],
+      fields: [
+        {
+          key: "id",
+          sortable: true,
+        },
+        {
+          key: "nombre",
+          sortable: true,
+        },
+        {
+          key: "telefono",
+          sortable: true,
+        },
+        {
+          key: "direccion",
+          sortable: true,
+        },
+        {
+          key: "correo",
+
+          sortable: true,
+        },
+        {
+          key: "ruc",
+          sortable: true,
+        },
+
+        {
+          key: "Acciones",
+          sortable: true,
         },
       ],
       listItems: [],
@@ -48,8 +81,9 @@ export default {
 <template>
   <Layout>
     <PageHeader :title="title" :items="items" />
-    <InfoCard />
     <PagersSearch />
-    <Table :items="listItems" />
+    <Table :fields="fields">
+      <DataTable :items="listItems" @getSucursal="getSucursal" />
+    </Table>
   </Layout>
 </template>
