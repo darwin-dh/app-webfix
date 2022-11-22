@@ -94,10 +94,7 @@ export default {
 
   methods: {
     getProfiles() {
-      //  const menu = localStorage.getItem("perfiles");
       const menu = JSON.parse(localStorage.getItem("perfiles"));
-      // const menu = localStorage.getItem(JSON.stringify('perfiles'));
-      console.log(menu);
       this.perfiles = menu;
     },
     initActiveMenu(ele) {
@@ -165,7 +162,7 @@ export default {
           aria-expanded="false"
           aria-controls="sidebarDashboards"
         >
-          <i :class="items.icono"></i>
+          <i :class="items.icono" class="fs-2"></i>
           <span data-key="t-administracion"> {{ items.label }}</span>
         </a>
         <div class="collapse menu-dropdown" :id="items.modulo">
