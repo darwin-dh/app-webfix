@@ -3,6 +3,7 @@ import Layout from "@/layouts/main.vue";
 import PageHeader from "@/components/page-header";
 import Table from "@/components/Generic/tablereport";
 import Datatable from "./Curd/Datatable.vue";
+import ModalVue from "./Components/Modal.vue";
 import axios from "axios";
 export default {
   components: {
@@ -10,6 +11,7 @@ export default {
     PageHeader,
     Table,
     Datatable,
+    ModalVue,
   },
   data() {
     return {
@@ -57,6 +59,8 @@ export default {
         },
       ],
       listItems: [],
+      adduser: "",
+      modalShow: false,
     };
   },
   methods: {
@@ -66,6 +70,10 @@ export default {
       this.listItems = data;
       console.log(data);
     },
+    openModal() {
+      const hola = "my-modal";
+      this.adduser = hola;
+    },
   },
   created() {
     this.getUser();
@@ -74,10 +82,11 @@ export default {
 </script>
 <template>
   <Layout>
+
     <PageHeader :title="title" :items="items" />
-    <PagersSearch />
+    <ModalVue :title="title" @getUser="getUser"/>
     <Table :fields="fields">
-      <Datatable :items="listItems" @getUser="getUser"/>
+      <Datatable :items="listItems" @getUser="getUser" :modal="adduserModal" />
     </Table>
   </Layout>
 </template>

@@ -20,6 +20,24 @@ export default [
     },
   },
   {
+    path: "/",
+    name: "default",
+    component: () => import("../views/account/login.vue"),
+    meta: {
+      title: "Login",
+      beforeResolve(routeTo, routeFrom, next) {
+        // If the user is already logged in
+        if (store.getters["auth/loggedIn"]) {
+          // Redirect to the home page instead
+          next({ name: "default" });
+        } else {
+          // Continue to the login page
+          next();
+        }
+      },
+    },
+  },
+/*   {
     path: "/register",
     name: "Register",
     component: () => import("../views/account/register.vue"),
@@ -36,8 +54,8 @@ export default [
         }
       },
     },
-  },
-  {
+  }, */
+/*   {
     path: "/forgot-password",
     name: "Forgot password",
     component: () => import("../views/account/forgot-password.vue"),
@@ -66,7 +84,7 @@ export default [
       },
     },
     component: () => import("../views/auth/logout/basic")
-  },
+  }, */
   {
     path: "/Dashboard",
     name: "Dashboard",

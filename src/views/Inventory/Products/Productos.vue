@@ -1,9 +1,9 @@
 <script >
 import Layout from "../../../layouts/main.vue";
 import PageHeader from "@/components/page-header";
-import InfoCard from "@/components/widgets/card.vue";
 import Pagerseacchbtn from "@/components/Funtions/Pager-Search-Btn.vue";
-import Table from "@/components/Generic/Table";
+import Table from "@/components/Generic/tablereport";
+import DataTable from "./Crud/DataTable.vue";
 import axios from "axios";
 import router from "@/router";
 import Swal from "sweetalert2";
@@ -12,9 +12,9 @@ export default {
   components: {
     Layout,
     PageHeader,
-    InfoCard,
     Pagerseacchbtn,
     Table,
+    DataTable,
   },
   data() {
     return {
@@ -22,6 +22,10 @@ export default {
       link: "/AgregarProducto",
       ListItems: [],
       fields: [
+        {
+          key: "Id",
+          sortable: true,
+        },
         {
           key: "codigo",
           sortable: true,
@@ -31,7 +35,25 @@ export default {
           sortable: true,
         },
         {
+          key: "codigoAlterno",
+          sortable: true,
+        },
+        {
+          key: "codigo_barras",
+          sortable: true,
+        },
+        {
           key: "caracteristicas",
+
+          sortable: true,
+        },
+        {
+          key: "ubicacion_fisica",
+
+          sortable: true,
+        },
+        {
+          key: "Estado",
           sortable: true,
         },
         {
@@ -39,16 +61,11 @@ export default {
           sortable: true,
         },
         {
-          key: "existencia_maxima",
-
+          key: "existencia_maxima	",
           sortable: true,
         },
         {
-          key: "existencia_minima",
-          sortable: true,
-        },
-        {
-          key: "estado",
+          key: "existencia_minima	",
           sortable: true,
         },
         {
@@ -57,7 +74,7 @@ export default {
         },
 
         {
-          key: "actiones",
+          key: "Acciones",
           sortable: true,
         },
       ],
@@ -126,75 +143,11 @@ export default {
 <template>
   <Layout>
     <PageHeader :title="title" :items="items" />
-    <InfoCard />
+
     <Pagerseacchbtn :title="title" :link="link" />
-    <b-button class="mb-5" variant="outline-warning " @click="exportar"
-      >Exportar</b-button
     >
     <Table :fields="fields">
-      <tr v-for="(data, index) in ListItems" :key="index">
-        <th scope="row">
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              name="chk_child"
-              value="option1"
-            />
-          </div>
-        </th>
-
-        <td class="id">
-          {{ data.codigo }}
-        </td>
-        <td class="project_name">
-          {{ data.nombre }}
-        </td>
-
-        <td class="client_name">{{ data.caracteristicas }}</td>
-        <td class="due_date">{{ data.unidad_entrada }}</td>
-        <td class="due_date">{{ data.existencia_maxima }}</td>
-        <td class="due_date">{{ data.existencia_minima }}</td>
-
-        <td class="priority">
-          <span
-            class="badge text-uppercase"
-            :class="{
-              'bg-danger': data.estado == 'inactivo',
-              'bg-success': data.estado == 'activo',
-            }"
-            >{{ data.estado }}</span
-          >
-        </td>
-        <td class="due_date">{{ data.numero_unidad }}</td>
-
-        <td>
-          <li class="align-bottom me-2 list-inline-item">
-            <b-button
-              variant="outline-primary "
-              class="btn-icon waves-effect waves-light"
-              @click="see(data)"
-              ><i class="ri-eye-line"></i
-            ></b-button>
-          </li>
-          <li class="list-inline-item">
-            <b-button
-              variant="outline-warning"
-              class="btn-icon waves-effect waves-light"
-              @click="edit(data)"
-              ><i class="ri-pencil-fill"></i
-            ></b-button>
-          </li>
-          <li class="list-inline-item">
-            <b-button
-              variant="outline-danger"
-              class="btn-icon waves-effect waves-light"
-              @click="delet(data)"
-              ><i class="ri-delete-bin-line"></i
-            ></b-button>
-          </li>
-        </td>
-      </tr>
+      <DataTable :items="ListItems" @getProductos="getProductos"/>
     </Table>
   </Layout>
 </template>

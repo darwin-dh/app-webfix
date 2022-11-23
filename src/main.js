@@ -10,6 +10,7 @@ import BootstrapVue3 from 'bootstrap-vue-3';
 import vClickOutside from "click-outside-vue3"
 import VueApexCharts from "vue3-apexcharts";
 import Maska from 'maska';
+import "@vueform/multiselect/themes/default.css";
 
 import VueFeather from 'vue-feather';
 import Particles from "particles.vue3";
