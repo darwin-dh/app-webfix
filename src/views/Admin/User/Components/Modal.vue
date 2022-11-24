@@ -1,7 +1,6 @@
 <script>
-import axios from "axios";
-import routes from "@/router";
 import Swal from "sweetalert2";
+import axios from "axios";
 import Multiselect from "@vueform/multiselect/src/Multiselect";
 export default {
   components: {
@@ -28,6 +27,10 @@ export default {
     };
   },
   methods: {
+    addnew() {
+      document.getElementById("add-btn").style.display = "block";
+      document.getElementById("edit-btn").style.display = "none";
+    },
     async getPefiles() {
       const result = await axios.get("/api/lista-Perfiles");
       const data = result.data.data;
@@ -52,9 +55,8 @@ export default {
             timer: 1500,
           });
         this.$emit("getUser");
-        setTimeout(() => {
-          routes.push({ name: "Usuario" });
-        }, "1600");
+        document.getElementById("closemodal").click();
+        setTimeout(() => {}, "1600");
       } catch (error) {
         Swal.fire({
           icon: "error",
@@ -71,23 +73,28 @@ export default {
 };
 </script>
 <template>
-  <div class="my-2">
-    <!-- Default Modals -->
+  <div class="my-2 card-body bg-white py-2 rounded-2 my-2">
     <button
-      type="button"
-      class="btn btn-primary-900"
+      class="
+        btn btn-soft-primary-900
+        d-flex
+        align-items-center
+        rounded-pill
+        my-2
+        mx-1
+      "
       data-bs-toggle="modal"
-      data-bs-target="#myModal"
+      href="#showmodal"
+      @click="addnew"
     >
-      Agregar {{ title }}
+      <i class="mdi mdi-plus fs-5"></i> <b>Agregar {{ title }}</b>
     </button>
     <div
-      id="myModal"
-      class="modal fade"
+      class="modal fade zoomIn"
+      id="showmodal"
       tabindex="-1"
-      aria-labelledby="myModalLabel"
+      aria-labelledby="exampleModalLabel"
       aria-hidden="true"
-      style="display: none"
     >
       <div class="modal-dialog">
         <div class="modal-content">
@@ -105,7 +112,9 @@ export default {
               <div class="row g-3">
                 <div class="col-xxl-6">
                   <div>
-                    <label for="firstName" class="form-label">Nombre</label>
+                    <label for="firstName" class="form-label"
+                      >Nombre <span class="text-danger">*</span></label
+                    >
                     <input
                       type="text"
                       class="form-control"
@@ -117,7 +126,9 @@ export default {
                 <!--end col-->
                 <div class="col-xxl-6">
                   <div>
-                    <label for="lastName" class="form-label">Apellido</label>
+                    <label for="lastName" class="form-label"
+                      >Apellido <span class="text-danger">*</span></label
+                    >
                     <input
                       type="text"
                       class="form-control"
@@ -128,7 +139,9 @@ export default {
                 </div>
                 <!--end col-->
                 <div class="col-lg-12">
-                  <label for="genderInput" class="form-label">Perfil</label>
+                  <label for="genderInput" class="form-label"
+                    >Perfil <span class="text-danger">*</span></label
+                  >
                   <Multiselect
                     class="borde mb-2 px-1"
                     v-model="perfil"
@@ -137,33 +150,32 @@ export default {
                     :create-option="true"
                     :options="options"
                   />
-                  {{ perfil }}
                 </div>
                 <!--end col-->
                 <div class="col-xxl-6">
-                  <div>
-                    <label for="emailInput" class="form-label">Email</label>
-                    <input
-                      type="email"
-                      class="form-control"
-                      v-model="email"
-                      id="emailInput"
-                      placeholder="Email"
-                    />
-                  </div>
+                  <label for="emailInput" class="form-label"
+                    >Email <span class="text-danger">*</span></label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    v-model="email"
+                    id="emailInput"
+                    placeholder="example@gmail.com"
+                  />
                 </div>
                 <!--end col-->
                 <div class="col-xxl-6">
-                  <div>
-                    <label for="passwordInput" class="form-label"
-                      >Password</label
-                    >
-                    <input
-                      type="password"
-                      class="form-control"
-                      v-model="password"
-                    />
-                  </div>
+                  <label for="passwordInput" class="form-label"
+                    >Password <span class="text-danger"> *</span></label
+                  >
+                  <input
+                    type="password"
+                    id="passwordInput"
+                    class="form-control"
+                    v-model="password"
+                    placeholder="******"
+                  />
                 </div>
                 <div class="col-lg-12">
                   <label for="genderInput" class="form-label">Estado</label>
@@ -180,17 +192,27 @@ export default {
             </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-light" data-bs-dismiss="modal">
-              Close
-            </button>
-            <button
-              type="button"
-              class="btn btn-primary"
-              @click="save"
-              data-bs-dismiss="modal"
-            >
-              Guardar
-            </button>
+            <div class="hstack gap-2 justify-content-end">
+              <button
+                type="button"
+                class="btn btn-light"
+                data-bs-dismiss="modal"
+                id="closemodal"
+              >
+                Close
+              </button>
+              <button class="btn btn-info" id="add-btn" @click="save">
+                Guardar
+              </button>
+              <button
+                type="button"
+                class="btn btn-success"
+                id="edit-btn"
+                @click="updateorder()"
+              >
+                Update
+              </button>
+            </div>
           </div>
         </div>
         <!-- /.modal-content -->

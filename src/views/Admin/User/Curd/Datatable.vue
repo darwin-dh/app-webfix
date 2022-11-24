@@ -8,9 +8,19 @@ export default {
       type: Object,
     },
   },
+  data() {
+    return {
+      visible: false,
+    };
+  },
   methods: {
-    see(items) {
-      console.log("ey", items.idsucursal);
+    cerrar() {
+      this.visible = false;
+    },
+    see() {
+      const element = document.querySelector("#modal1");
+      element.classList.add("modal");
+      this.visible = true;
     },
     edit(items) {
       router.push({
@@ -82,6 +92,8 @@ export default {
         </button>
 
         <button
+          data-bs-toggle="modal"
+          href="#showmodal"
           class="
             btn btn-outline-warning
             d-flex

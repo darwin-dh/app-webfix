@@ -2,15 +2,21 @@
 import Swal from "sweetalert2";
 import axios from "axios";
 import router from "@/router";
+//ant
 export default {
   props: {
     items: {
       type: Object,
     },
   },
+  data() {
+    return {
+      verModal: false,
+    };
+  },
   methods: {
-    see(items) {
-      console.log("ey", items.idsucursal);
+    see() {
+      this.verModal = true;
     },
     edit(items) {
       router.push({
@@ -51,7 +57,7 @@ export default {
     class="rounded-pill mb-5 py-5"
   >
     <td class="">
-      {{ data.idsucursal }}
+      {{ data.idempresa }}
     </td>
     <td class="project_name">
       {{ data.nombre }}
@@ -73,22 +79,16 @@ export default {
         </button>
 
         <button
-          class="btn btn-outline-warning d-flex align-items-center text-warning px-2"
+          class="
+            btn btn-outline-warning
+            d-flex
+            align-items-center
+            text-warning
+            px-2
+          "
           @click="edit(data)"
         >
           <i class="mdi mdi-pencil-box-outline"></i> Editar
-        </button>
-        <button
-          class="
-            btn btn-outline-danger
-            d-flex
-            align-items-center
-            text-danger-900
-            px-2
-          "
-          @click="delet(data)"
-        >
-          <i class="mdi mdi-trash-can-outline"></i>Borrar
         </button>
       </div>
     </td>
