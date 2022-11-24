@@ -17,7 +17,9 @@ import Particles from "particles.vue3";
 
 import '@/assets/scss/config/default/app.scss';
 import '@vueform/slider/themes/default.css';
-//boostrap
+//ant
+import { Modal, Button, Table } from "ant-design-vue"
+import 'ant-design-vue/dist/antd.css';
 
 AOS.init({
     easing: 'ease-out-back',
@@ -29,6 +31,10 @@ createApp(App)
     .use(router)
     .use(VueApexCharts)
     .use(BootstrapVue3)
+    //ant
+    .use(Modal)
+    .use(Button)
+    .use(Table)
     .component(VueFeather.type, VueFeather)
     .use(Maska)
     .use(Particles)
