@@ -17,7 +17,7 @@ import Particles from "particles.vue3";
 
 import '@/assets/scss/config/default/app.scss';
 import '@vueform/slider/themes/default.css';
-
+//boostrap
 
 AOS.init({
     easing: 'ease-out-back',
@@ -34,3 +34,4 @@ createApp(App)
     .use(Particles)
     .use(i18n)
     .use(vClickOutside).mount('#app')
+

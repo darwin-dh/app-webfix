@@ -4,6 +4,7 @@ import PageHeader from "@/components/page-header";
 import Pagerseacchbtn from "@/components/Funtions/Pager-Search-Btn.vue";
 import Table from "@/components/Generic/tablereport";
 import DataTable from "./Crud/DataTable.vue";
+import Modalvue from "@/components/Generic/Modal.vue";
 import axios from "axios";
 import router from "@/router";
 import Swal from "sweetalert2";
@@ -15,6 +16,7 @@ export default {
     Pagerseacchbtn,
     Table,
     DataTable,
+    Modalvue,
   },
   data() {
     return {
@@ -143,11 +145,10 @@ export default {
 <template>
   <Layout>
     <PageHeader :title="title" :items="items" />
-
+    <Modalvue />
     <Pagerseacchbtn :title="title" :link="link" />
-    >
     <Table :fields="fields">
-      <DataTable :items="ListItems" @getProductos="getProductos"/>
+      <DataTable :items="ListItems" @getProductos="getProductos" />
     </Table>
   </Layout>
 </template>
