@@ -1,5 +1,7 @@
 <script >
+import PagerSearchBtn from '@/components/Funtions/Pager-Search-Btn.vue'
 export default {
+  components:{PagerSearchBtn},
   props: {
     items: {
       type: Object,
@@ -125,6 +127,7 @@ export default {
 </script>
 
 <template>
+  <PagerSearchBtn/>
   <div class="row">
     <div class="col-lg-12 table-responsive">
       <table class="table align-right mb-0 table-hover table-striped ">

@@ -82,9 +82,8 @@ export default {
 </script>
 <template>
   <Layout>
-
     <PageHeader :title="title" :items="items" />
-    <ModalVue :title="title" @getUser="getUser"/>
+    <ModalVue :title="title" @getUser="getUser" />
     <Table :fields="fields">
       <Datatable :items="listItems" @getUser="getUser" :modal="adduserModal" />
     </Table>

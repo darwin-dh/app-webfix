@@ -268,4 +268,13 @@ export default [
     },
     component: () => import("@/views/Sales/Clients/Crud/EditClients.vue")
   },
+  {
+    path: "/Pagos",
+    name: "Pagos",
+    meta: {
+      title: "Pagos"
+
+    },
+    component: () => import("@/views/Accounting/Payments/Pagos.vue")
+  },
 ];
