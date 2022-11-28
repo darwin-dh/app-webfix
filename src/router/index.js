@@ -4,7 +4,8 @@ import auth from "./routes/auth";
 import admin from "./routes/admin";
 import inventory from "./routes/inventory";
 import accounting from "./routes/accounting";
-import sales from "./routes/sales";
+import thirds from "./routes/thirds";
+
 
 const router = createRouter({
   history: createWebHistory(),
@@ -13,7 +14,7 @@ const router = createRouter({
     ...admin,
     ...inventory,
     ...accounting,
-    ...sales,
+    ...thirds,
   ],
 
   mode: 'history',
